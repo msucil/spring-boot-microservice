@@ -8,5 +8,21 @@ server:
 
 eureka:
   client:
+    health-check:
+      enabled: true
     serviceUrl:
       defaultZone: http://localhost:8081/eureka/
+
+logging:
+  level:
+    web: DEBUG
+    '[net.ttddyy.dsproxy.listener]': debug
+
+management:
+  endpoints:
+    enabled-by-default: true
+    gateway:
+      enabled: true # default value
+  web:
+    exposure:
+      include: '*'
