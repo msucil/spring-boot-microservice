@@ -1,3 +1,8 @@
+info:
+  name: "Info Service"
+  version: 1
+  developer: "@msucil"
+  description: "Demo Service to interact with API Gateway"
 
 spring:
   application:
@@ -21,8 +26,12 @@ logging:
 management:
   endpoints:
     enabled-by-default: true
-    gateway:
-      enabled: true # default value
-  web:
-    exposure:
-      include: '*'
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - env
+          - configprops
+          - metrics
+          - gateway
